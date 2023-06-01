@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Password Manager Superhero</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <div class="hero-banner">
+    <h1>Welcome to Password Manager Superhero!</h1>
+    <p>Let's embark on an exciting journey to find the perfect password manager for you. Answer the following questions and we'll suggest the best fit for your needs:</p>
+  </div>
+  <form id="questionaryForm" class="questionary-style" action="/recommend" method="post">
+    <div id="question1" class="question">
+      <h2>1. What is your level of familiarity with a password manager tool?</h2>
+      <input type="radio" name="familiarity" value="experienced"> Experienced<br>
+      <input type="radio" name="familiarity" value="average"> Average<br>
+      <input type="radio" name="familiarity" value="new"> New<br>
+      <button type="button" class="nextButton">Next</button>
+
+    </div>
+    <div id="question2" class="question">
+      <h2>2. In which industry or sector does your company operate?</h2>
+      <input type="radio" name="industry" value="technology"> Technology<br>
+      <input type="radio" name="industry" value="financial"> Financial<br>
+      <input type="radio" name="industry" value="healthcare"> Healthcare<br>
+      <input type="radio" name="industry" value="other"> Other<br>
+      <button type="button" class="nextButton">Next</button>
+
+    </div>
+    <div id="question3" class="question">
+      <h2>3. How large is the workforce of your company in terms of the number of employees?</h2>
+      <input type="radio" name="workforce" value="0-10"> 0 - 10<br>
+      <input type="radio" name="workforce" value="10-50"> 10 - 50<br>
+      <input type="radio" name="workforce" value="50-200"> 50 - 200<br>
+      <input type="radio" name="workforce" value="200+"> 200+<br>
+      <button type="button" class="nextButton">Next</button>
+
+    </div>
+    <div id="question4" class="question">
+      <h2>4. Where does your company intend to store all of its passwords?</h2>
+      <input type="checkbox" name="password-storage" value="local"> Local<br>
+      <input type="checkbox" name="password-storage" value="cloud"> Cloud<br>
+      <button type="button" class="nextButton">Next</button>
+
+    </div>
+    <div id="question5" class="question">
+      <h2>5. Which features hold significant importance for your company?</h2>
+      <input type="checkbox" name="features" value="password-exchange"> Password Exchange<br>
+      <input type="checkbox" name="features" value="2fa"> Two-Factor Authentication (2FA)<br>
+      <input type="checkbox" name="features" value="emergency-access"> Emergency Access<br>
+      <input type="checkbox" name="features" value="document-vault"> Document Vault<br>
+      <input type="checkbox" name="features" value="custom-location"> Custom Location Password Vault<br>
+      <input type="checkbox" name="features" value="open-source"> Open Source<br>
+      <button type="button" class="nextButton">Next</button>
+
+    </div>
+    <div id="question6" class="question">
+      <h2>6. Which operating system is used within your company's infrastructure?</h2>
+      <input type="checkbox" name="os" value="macos"> MacOS<br>
+      <input type="checkbox" name="os" value="windows"> Windows<br>
+      <input type="checkbox" name="os" value="linux"> Linux<br>
+      <button type="submit" class="submitButton">Submit</button>
+
+
+    </div>
+      <button type="button" class="button-11" role="button">Back</button>
+      <input type="submit" id="submitButton" value="Submit">
+  </form>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+      $(document).ready(function() {
+        $(".question").hide(); // Hide all questions at first
+        $("#question1").show(); // Show only the first question
+        $("#backButton").hide(); // Hide back button at first
+        $("#submitButton").hide(); // Hide submit button at first
+
+        $('.nextButton').click(function() {
+          $(this).closest('.question').next('.question').slideDown();
+          $(this).closest('.question').slideUp();
+
+          // If we're at the last question, show the submit button
+          if ($(this).closest('.question').next('.question').length == 0) {
+            $("#submitButton").show();
+          }
+
+          $("#backButton").show();
+        });
+
+        $('.button-11').click(function() {
+          $('.question').each(function(index) {
+            if($(this).is(':visible') && index !== 0) {
+              $(this).slideUp();
+              $(this).prev('.question').slideDown();
+              $("#submitButton").hide(); // Hide submit button again if back is clicked
+              return false;
+            }
+          });
+
+          // If first question is visible, hide the back button
+          if ($("#question1").is(":visible")) {
+            $("#backButton").hide();
+          }
+        });
+
+        // Remove the select button from recommendation forms
+        $('.recommendation-form .select-button').remove();
+      });
+    </script>
+
+</body>
+</html>

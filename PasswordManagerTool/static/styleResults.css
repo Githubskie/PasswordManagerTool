@@ -1,0 +1,243 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.hero-banner {
+  text-align: center;
+  padding: 2em;
+  margin-bottom: 2em;
+  background-color: #f2f2f2;
+  border-radius: 15px;
+}
+
+/* Questionnaire Styles */
+#questionaryForm {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+#questionaryForm h1,
+#questionaryForm h2,
+#questionaryForm p {
+  text-align: center;
+  color: #333;
+}
+
+#questionaryForm h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+#questionaryForm input[type="radio"],
+#questionaryForm input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+#questionaryForm select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#questionaryForm input[type="submit"] {
+  display: block;
+  width: 150px;
+  margin: 30px auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.backButton {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 20px auto;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.backButton:hover {
+  background-color: #45a049;
+}
+
+.nextButton,
+.submitButton {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 20px auto;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.nextButton:hover,
+.submitButton:hover {
+  background-color: #45a049;
+}
+
+h1,
+h2,
+p {
+  text-align: center;
+  color: #333;
+}
+
+a.start-btn {
+  display: block;
+  width: 200px;
+  margin: 30px auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Questionnaire Styles */
+form {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+form h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 150px;
+  margin: 30px auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Results Styles */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.recommendations-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.recommendation-form {
+  width: calc(33.33% - 20px); /* Adjust the width to your liking */
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.recommendation-form h2 {
+  margin-top: 0;
+}
+
+.recommendation-form p {
+  margin-bottom: 10px;
+}
+
+.select-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.select-button:hover {
+  background-color: #45a049;
+}
+
+.backButton {
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: 20px auto;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.backButton:hover {
+  background-color: #45a049;
+}
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Password Manager Recommendations</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styleResults.css') }}">
+</head>
+<body>
+  <h1>Recommendations</h1>
+
+  <div class="recommendations-container">
+    {% for manager in bestManagers %}
+      <form class="recommendation-form">
+        <h2>{{ manager.name }}</h2>
+        <p>Price: {{ manager.price }}</p>
+        <p>Safety: {{ manager.safety }}</p>
+        <p>Ease of Use: {{ manager.easeOfUse }}</p>
+        <p>Functionalities: {{ manager.functionalities }}</p>
+        <p>Password Exchange: {{ manager.passwordExchange }}</p>
+        <p>Two-Factor Authentication: {{ manager.twoFactorAuth }}</p>
+        <p>Emergency Access: {{ manager.emergencyAccess }}</p>
+        <p>Document Vault: {{ manager.documentVault }}</p>
+        <p>Custom Location Password Vault: {{ manager.customLocation }}</p>
+        <p>Open Source: {{ manager.openSource }}</p>
+        <p>Local Storage: {{ manager.localStorage }}</p>
+        <p>Online Storage: {{ manager.onlineStorage }}</p>
+        <p>Operating System: {{ manager.operatingSystem }}</p>
+        <button type="submit" class="select-button">Select</button>
+      </form>
+    {% endfor %}
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
+
